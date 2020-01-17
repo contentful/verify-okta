@@ -220,7 +220,7 @@ func baseJS(baseURL, clientID string) string {
 	return `
 		var baseURL = "` + baseURL + `";
 		var clientId = "` + clientID + `";
-		var oktaCDN = "https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0";
+		var oktaCDN = "https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.21.0";
 		var js = "/js/okta-sign-in.min.js";
 		var css = ["/css/okta-sign-in.min.css", "/css/okta-theme.css"];
 
@@ -258,7 +258,6 @@ func authenticatedJS(baseURL, clientID string) string {
 				baseUrl: baseURL,
 				clientId: clientId,
 				authParams: {
-					issuer: baseURL + "/oauth2/default",
 					responseType: ['id_token'],
 					display: 'page'
 				}
@@ -291,7 +290,6 @@ func unauthenticatedJS(baseURL, clientID string) string {
 			baseUrl: baseURL,
 			clientId: clientId,
 			authParams: {
-			  issuer: baseURL + "/oauth2/default",
 			  responseType: ['id_token'],
 			  display: 'page'
 			}
